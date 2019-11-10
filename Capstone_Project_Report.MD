@@ -38,6 +38,9 @@ In this section, you will need to clearly define the metrics or calculations you
 - _Are the metrics you’ve chosen to measure the performance of your models clearly discussed and defined?_
 - _Have you provided reasonable justification for the metrics chosen based on the problem and solution?_
 
+Log loss would also be a good metric to consider. This metric can handle class imbalances and works well with deep learning implementations.
+
+
 
 ## II. Analysis
 _(approx. 2-4 pages)_

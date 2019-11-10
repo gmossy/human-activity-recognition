@@ -1,10 +1,9 @@
 # Machine Learning Engineer Nanodegree
 ## Capstone Project
-Joe Udacity  
-December 31st, 2050
+Glenn Mossy
+November 10, 2019
 
 ## I. Definition
-_(approx. 1-2 pages)_
 
 ### Project Overview
 In this section, look to provide a high-level overview of the project in layman’s terms. Questions to ask yourself when writing this section:
@@ -50,6 +49,9 @@ In this section, you will be expected to analyze the data you are using for the 
 - _If a dataset is **not** present for this problem, has discussion been made about the input space or input data for your problem?_
 - _Are there any abnormalities or characteristics about the input space or dataset that need to be addressed? (categorical variables, missing values, outliers, etc.)_
 
+
+I think that the scope and nature of the dataset are clearly defined. The one thing that I'd suggest adding here would be to specify that the sampling rate is consistent across the dataset.
+
 ### Exploratory Visualization
 In this section, you will need to provide some form of visualization that summarizes or extracts a relevant characteristic or feature about the data. The visualization should adequately support the data being used. Discuss why this visualization was chosen and how it is relevant. Questions to ask yourself when writing this section:
 - _Have you visualized a relevant characteristic or feature about the dataset or input data?_
@@ -62,10 +64,20 @@ In this section, you will need to discuss the algorithms and techniques you inte
 - _Are the techniques to be used thoroughly discussed and justified?_
 - _Is it made clear how the input data or datasets will be handled by the algorithms and techniques chosen?_
 
+Suggested:
+•	The XGBoost and LightGBM models could be good supervised learning approaches to try here.
+•	Since you're creating multiple supervised learning models, you could try combining them all together into a custom ensemble model:
+http://blog.kaggle.com/2016/12/27/a-kagglers-guide-to-model-stacking-in-practice/
+https://www.kaggle.com/arthurtok/introduction-to-ensembling-stacking-in-python
+
+
+
 ### Benchmark
 In this section, you will need to provide a clearly defined benchmark result or threshold for comparing across performances obtained by your solution. The reasoning behind the benchmark (in the case where it is not an established result) should be discussed. Questions to ask yourself when writing this section:
 - _Has some result or value been provided that acts as a benchmark for measuring performance?_
 - _Is it clear how this result or value was obtained (whether by data or by hypothesis)?_
+
+The benchmark model that will be used will be a logistic regression model for a classification to develop a baseline activity recognition model.
 
 
 ## III. Methodology

@@ -1,3 +1,4 @@
+Udacity Machine Learning Capstone Project
 # human-activity-recognition
 Udacity Machine Learning Capstone - A Machine Learning Based Human Activity Recognizer
 

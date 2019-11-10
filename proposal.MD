@@ -28,22 +28,18 @@ This project uses the dataset “A Public Domain Dataset for Human Activity Reco
 
 The dataset is comprised of un-calibrated accelerometer data from 30 different subjects ages ranging from 19-48 years, each performing 6 activities. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, the data captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz.  The obtained dataset has been randomly partitioned into two sets, "train.csv", where 70% of the volunteers was selected for generating the training data and 30% the test data "test.csv".
 
-The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
+The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window).  The sampling rate is consistent across the dataset. The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
 
 For each record in the dataset the following is provided:
 
      -Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
-
      -Triaxial Angular velocity from the gyroscope.
-
      -A 561-feature vector with time and frequency domain variables.
-
      -Its activity label.
-
      -An identifier of the subject who carried out the experiment.
 
 ### Solution Statement
-The solution is a classification model capable of predicting the human activity recognition first using traditional supervised learning models using classification algorithms such as logistic regression, random forests, support vector machines, then trying an artificial neural network (ANN). Models will be built and then used to infer the activity from test data.  The accuracy will be evaluated. 
+The solution is a classification model capable of predicting the human activity recognition first using traditional supervised learning models using classification algorithms such as logistic regression, random forests, support vector machines, then trying an artificial neural network (ANN). Models will be built and then used to infer the activity from test data.  An attempt at combining the classification algorithms all together into a custom ensemble model will be done, and the accuracy will be evaluated. 
 
 ### Benchmark Model
 The benchmark model that will be used will be a logistic regression model for a classification to develop a baseline activity recognition model.

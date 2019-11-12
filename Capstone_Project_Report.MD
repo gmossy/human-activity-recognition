@@ -38,11 +38,9 @@ In this section, you will need to clearly define the metrics or calculations you
 - _Are the metrics you’ve chosen to measure the performance of your models clearly discussed and defined?_
 - _Have you provided reasonable justification for the metrics chosen based on the problem and solution?_
 
-Log loss would also be a good metric to consider. This metric can handle class imbalances and works well with deep learning implementations.
+Most of the time we use classification accuracy to measure the performance of our model, however it is not enough to truly judge our model. There are five other metrics that will be used to meaure performance of the models, the confusion matrix, the Precision-Recall Curve, the Receiver Operating Characteristic, F1 Score and Log Loss. 
 
-Most of the time we use classification accuracy to measure the performance of our model, however it is not enough to truly judge our model. There are five other metrics that will be used to meaure performance of the models, the confusion matrix, the Precision-Recall Cfiurve, the Receiver Operating Characteristic, F1 Score and Log Loss. 
-
-Classification Accuracy is what we usually mean, when we use the term accuracy. It is the ratio of number of correct predictions to the total number of input samples.
+Classification Accuracy is what we usually mean, when we use the term accuracy. It is the ratio of number of correct predictions to the total number of activity input samples.
 
 The confusion matrix, which is an output table that summarizes the number of true positives, true negatives, false positives, and false negatives, and describes the complete performance of the model. The confusion matrix is a straightforward evaluation metric if we assume that the results have balanced classes, in the number of true positives to true negatives. If the dataset is imbalanced, we need to find a more appropriate evaluatiaon metric such as the precision-recall curve. 
 
@@ -70,19 +68,18 @@ In this section, you will be expected to analyze the data you are using for the 
 
 I think that the scope and nature of the dataset are clearly defined. The one thing that I'd suggest adding here would be to specify that the sampling rate is consistent across the dataset.
 
-
 The HAR dataset was collected in laboratory conditions but volunteers were asked to perform freely the sequence of activities for a more naturalistic dataset.  The set of experiments in which each person were instructed to follow was a protocol of activities while wearing a waist-mounted Samsung Galaxy S II smartphone. The six selected activities were standing, sitting, laying down, walking, walking downstairs and upstairs. A group of 30 volunteers with ages ranging from 19 to 48 years were selected for this task.
 Data collected is sensor data from triaxial linear acceleration and angular velocity signals using the phone accelerometer and gyroscope at a sampling rate of 50Hz that was consistent across the dataset.
-
-
-
-
 
 ### Exploratory Visualization
 In this section, you will need to provide some form of visualization that summarizes or extracts a relevant characteristic or feature about the data. The visualization should adequately support the data being used. Discuss why this visualization was chosen and how it is relevant. Questions to ask yourself when writing this section:
 - _Have you visualized a relevant characteristic or feature about the dataset or input data?_
 - _Is the visualization thoroughly analyzed and discussed?_
 - _If a plot is provided, are the axes, title, and datum clearly defined?_
+
+Visualization of Feature Distribution will be done using sns stripplots.
+Visual exploration of the data in 3 dimensions with principal component analysis will be done.
+
 
 ### Algorithms and Techniques
 In this section, you will need to discuss the algorithms and techniques you intend to use for solving the problem. You should justify the use of each one based on the characteristics of the problem and the problem domain. Questions to ask yourself when writing this section:
@@ -96,7 +93,9 @@ Suggested:
 http://blog.kaggle.com/2016/12/27/a-kagglers-guide-to-model-stacking-in-practice/
 https://www.kaggle.com/arthurtok/introduction-to-ensembling-stacking-in-python
 
+Ensembles:  Instead of picking just one of the machine learning solutions we have developed for use in production, we can evaluate whether an ensemble of the models leans to an improved classification rate.   This is because each of the standalone solutions have different strengths and weaknesses, and the compensation for the strengths and weaknesses between the models will generally lead to a better result of them all together in an ensemble. 
 
+Stacking:  We use stacking to determine whether or not we can get an improvement in performance compared to the standalone models.  In stacking, we take the predictions from the k-fold cross-validation from each of the standalone models (layer one predictions) and append them to the original training dataset.  We then train on this original features plus layer one predictions dataset using k-fold cross-validation, resulting in layer two predictions. And from this it will be evaluated to see if we have an improvement over any of the standalone models. 
 
 ### Benchmark
 In this section, you will need to provide a clearly defined benchmark result or threshold for comparing across performances obtained by your solution. The reasoning behind the benchmark (in the case where it is not an established result) should be discussed. Questions to ask yourself when writing this section:
@@ -104,7 +103,7 @@ In this section, you will need to provide a clearly defined benchmark result or 
 - _Is it clear how this result or value was obtained (whether by data or by hypothesis)?_
 
 The benchmark model that will be used will be a logistic regression model for a classification to develop a baseline activity recognition model.
-
+The benchmark model will then be compared to the different standalone models, and then to the ensemble, then the stacking, and then the ANN models predictions.  
 
 ## III. Methodology
 _(approx. 3-5 pages)_
@@ -114,6 +113,8 @@ In this section, all of your preprocessing steps will need to be clearly documen
 - _If the algorithms chosen require preprocessing steps like feature selection or feature transformations, have they been properly documented?_
 - _Based on the **Data Exploration** section, if there were abnormalities or characteristics that needed to be addressed, have they been properly corrected?_
 - _If no preprocessing is needed, has it been made clear why?_
+There is no need for pre-processing of the samples, as the sampling rate of 50Hz that is consistent across the dataset.
+
 
 ### Implementation
 In this section, the process for which metrics, algorithms, and techniques that you implemented for the given data will need to be clearly documented. It should be abundantly clear how the implementation was carried out, and discussion should be made regarding any complications that occurred during this process. Questions to ask yourself when writing this section:
@@ -178,3 +179,12 @@ In this section, you will need to provide discussion as to how one aspect of the
 - Are all the resources used for this project correctly cited and referenced?
 - Is the code that implements your solution easily readable and properly commented?
 - Does the code execute without error and produce results similar to those reported?
+
+
+
+
+Resources:
+Patel, A., "Hands-On Unsupervised Learning Using Python" How to Build Applied Machine Learning Solutions from Unlabeled Data, O'Reilly Media Inc., 3rd Release, May 03, 2019.
+
+
+

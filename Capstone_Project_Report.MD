@@ -40,6 +40,21 @@ In this section, you will need to clearly define the metrics or calculations you
 
 Log loss would also be a good metric to consider. This metric can handle class imbalances and works well with deep learning implementations.
 
+Most of the time we use classification accuracy to measure the performance of our model, however it is not enough to truly judge our model. There are five other metrics that will be used to meaure performance of the models, the confusion matrix, the Precision-Recall Cfiurve, the Receiver Operating Characteristic, F1 Score and Log Loss. 
+
+Classification Accuracy is what we usually mean, when we use the term accuracy. It is the ratio of number of correct predictions to the total number of input samples.
+
+The confusion matrix, which is an output table that summarizes the number of true positives, true negatives, false positives, and false negatives, and describes the complete performance of the model. The confusion matrix is a straightforward evaluation metric if we assume that the results have balanced classes, in the number of true positives to true negatives. If the dataset is imbalanced, we need to find a more appropriate evaluatiaon metric such as the precision-recall curve. 
+
+Precision is the number of true positives over the number of total positive predictions.  A high precision means that there will be many true positives and a low false positive rate.    
+Recall is the number of true positives over the number of total actual positives in the dataset.  A high recall means that the model has captured most of the true positives, and has a low false negative rate.
+An optimal solution needs to have high precision and high recall, rejecting only those activities that don't match the class, i.e. high precision, and matching the correct activity to the class in the dataset (high recall). 
+
+Receiver Operating Characteristic is one of the most widely used metrics for evaluation, and used for binary classification problems. that plots the true positive rate on the Y axis and the false positive rate on the X axis.  The closer the curve is to the top-left corner of the plot, the better the solutionh,signifying a 0% false positive rate and a 100% true positive rate.  To evaluate the solution, we compute the area under the curve, so that the larger the auROC, the better the model. 
+
+F1 Score is the Harmonic Mean between precision and recall. The range for F1 Score is [0, 1]. It tells you how precise the classifier is (how many instances it classifies correctly), as well as how robust it is (it does not miss a significant number of instances).
+
+The Logarithmic Loss metric can handle class imbalances and works well with for multi-class classification with artificial neural network implementations. The log loss works by penalising the false classifications, in other words minimizing Log Loss will indicate greater accuracy for the classifier.
 
 
 ## II. Analysis

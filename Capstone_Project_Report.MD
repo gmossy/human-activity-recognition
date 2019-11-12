@@ -55,6 +55,14 @@ In this section, you will be expected to analyze the data you are using for the 
 
 I think that the scope and nature of the dataset are clearly defined. The one thing that I'd suggest adding here would be to specify that the sampling rate is consistent across the dataset.
 
+
+The HAR dataset was collected in laboratory conditions but volunteers were asked to perform freely the sequence of activities for a more naturalistic dataset.  The set of experiments in which each person were instructed to follow was a protocol of activities while wearing a waist-mounted Samsung Galaxy S II smartphone. The six selected activities were standing, sitting, laying down, walking, walking downstairs and upstairs. A group of 30 volunteers with ages ranging from 19 to 48 years were selected for this task.
+Data collected is sensor data from triaxial linear acceleration and angular velocity signals using the phone accelerometer and gyroscope at a sampling rate of 50Hz that was consistent across the dataset.
+
+
+
+
+
 ### Exploratory Visualization
 In this section, you will need to provide some form of visualization that summarizes or extracts a relevant characteristic or feature about the data. The visualization should adequately support the data being used. Discuss why this visualization was chosen and how it is relevant. Questions to ask yourself when writing this section:
 - _Have you visualized a relevant characteristic or feature about the dataset or input data?_

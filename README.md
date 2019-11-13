@@ -3,6 +3,11 @@ Udacity Machine Learning Capstone Project
 Udacity Machine Learning Capstone - A Machine Learning Based Human Activity Recognizer
 
 In this README file, I will include a link and instructions on how to the run the project once the data is downloaded. 
+The data is provided as a single zip file that is about 58 megabytes in size. The direct link for this download is below:
+UCI HAR Dataset.zip   https://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Dataset.zip
+
+Download the dataset and unzip all files into a new directory in your current working directory named “HARDataset”.
+
 
 Installations
 This project was written in the Anaconda environment and Python 3.7
@@ -23,4 +28,5 @@ This dataset repository contains the following:
 Acknowledgements      
 Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. A Public Domain Dataset for Human Activity Recognition Using Smartphones. 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013.
 UCI Machine Learning Repository: https://archive.ics.uci.edu/ml/index.php
+Youtube video, Activity Recognition Experiment Using Smartphone Sensor, https://www.youtube.com/watch?v=XOEN9W05_4A, Oct 19, 2012
 Udacity - for setting up the project and course contents.

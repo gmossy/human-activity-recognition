@@ -16,7 +16,7 @@ Human Activity Recognition appealing applications ranging from security-related 
 
 Human Activity Recognition aims to identify the actions carried out by a person provided by a set of observations from the person's movements and surrounding environment, and then model a wide range of human activities. Recognition can be accomplished by exploiting the information retrieved from various sources such as body-worn sensors.  It is believed that by empowering computer monitoring to monitor the behavior of agents then these computers would become and suited to act on our behalf. 
  
-This project is based on sensors that are a body mounted accelerometer and gyroscope but many additional sensors, such as microphones, motion video capture, human physiological signals or vital signs could be later added to this project in order to capture data to provide features to the model that would improve the accuracy, provide better models, and increase the number of activities that can be understood, with the ultimate goal of providing a real-time prediction of each and every activity that the person is doing.  This project is based on the work "A Public Domain Dataset for Human Activity Recognition Using Smartphones." by Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. at the 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013. https://archive.ics.uci.edu/ml/datasets/human+activity+recognition+using+smartphones
+This project is based on sensors that are a body mounted accelerometer and gyroscope but many additional sensors, such as microphones, motion video capture, human physiological signals or vital signs could be later added to this project in order to capture data to provide features to the model that would improve the accuracy, provide more data for the models, and increase the number of activities that can be understood, with the ultimate goal of providing a real-time prediction of each and every activity that the person is doing.  This project is based on the work "A Public Domain Dataset for Human Activity Recognition Using Smartphones." by Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. at the 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013. https://archive.ics.uci.edu/ml/datasets/human+activity+recognition+using+smartphones
 
 My interest in this field stems from my work with AT&T Public sector where I am a Senior Solutions Architect providing technical leadership on Technology Innovation initiatives for our Nations Department of Defense, DISA, Army and Cyber programs.  In this role I support multi-vendor, high risk/reward integration projects, including rapid software development, enterprise networking and automation that enables business processes, and provides operations automation. I have participated in AT&T Software Symposium Hackathons in which the project was to provide assisted living support to wheelchair bound, severely disabled patients.  I am also an adjunct instruction at Frederick Community College teaching students how to program Arduino microcontrollers and sensors to interact with the physical environment. 
 
@@ -42,11 +42,10 @@ Most of the time we use classification accuracy to measure the performance of ou
 
 Classification Accuracy is what we usually mean, when we use the term accuracy. It is the ratio of number of correct predictions to the total number of activity input samples.
 
-The confusion matrix, which is an output table that summarizes the number of true positives, true negatives, false positives, and false negatives, and describes the complete performance of the model. The confusion matrix is a straightforward evaluation metric if we assume that the results have balanced classes, in the number of true positives to true negatives. If the dataset is imbalanced, we need to find a more appropriate evaluatiaon metric such as the precision-recall curve. 
+The confusion matrix, which is an output table that summarizes the number of true positives, true negatives, false positives, and false negatives, and describes the complete performance of the model. The confusion matrix is a straightforward evaluation metric if we assume that the results have balanced classes, in the number of true positives to true negatives.
 
-Precision is the number of true positives over the number of total positive predictions.  A high precision means that there will be many true positives and a low false positive rate.    
-Recall is the number of true positives over the number of total actual positives in the dataset.  A high recall means that the model has captured most of the true positives, and has a low false negative rate.
-An optimal solution needs to have high precision and high recall, rejecting only those activities that don't match the class, i.e. high precision, and matching the correct activity to the class in the dataset (high recall). 
+The Precision-Recall evalution metrics can be used if we find that the dataset is imbalanced. 
+Precision is the number of true positives over the number of total positive predictions.  A high precision means that there will be many true positives and a low false positive rate.  Recall is the number of true positives over the number of total actual positives in the dataset.  A high recall means that the model has captured most of the true positives, and has a low false negative rate.  An optimal solution needs to have high precision and high recall, rejecting only those activities that don't match the class, i.e. high precision, and matching the correct activity to the class in the dataset (high recall). 
 
 Receiver Operating Characteristic is one of the most widely used metrics for evaluation, and used for binary classification problems. that plots the true positive rate on the Y axis and the false positive rate on the X axis.  The closer the curve is to the top-left corner of the plot, the better the solutionh,signifying a 0% false positive rate and a 100% true positive rate.  To evaluate the solution, we compute the area under the curve, so that the larger the auROC, the better the model. 
 
@@ -87,15 +86,19 @@ In this section, you will need to provide some form of visualization that summar
 - _Is the visualization thoroughly analyzed and discussed?_
 - _If a plot is provided, are the axes, title, and datum clearly defined?_
 
-Visualization of Feature Distribution will be done using sns stripplots.
+Visualization of Feature Distribution of the activities by type.
 Visual exploration of the data in 3 dimensions with principal component analysis will be done.
-
+Plot Traces for a Single Subject, Plot Total Activity Durations, Plot Traces for Each Subject
 
 ### Algorithms and Techniques
 In this section, you will need to discuss the algorithms and techniques you intend to use for solving the problem. You should justify the use of each one based on the characteristics of the problem and the problem domain. Questions to ask yourself when writing this section:
 - _Are the algorithms you will use, including any default variables/parameters in the project clearly defined?_
 - _Are the techniques to be used thoroughly discussed and justified?_
 - _Is it made clear how the input data or datasets will be handled by the algorithms and techniques chosen?_
+
+First, a baseline in performance will be done using a robust method such as Logistic Regression. Next, XGBoost and LightGBM models are good supervised learning approaches that will be explored next. 
+Instead of picking just one of the machine learning solutions we have developed, we will build an ensemble of the models and evaluate if that leads to an improved classification rate.  An ensemble of the Logistic Regression Model, XGBoost, and LightGBM will be built.  An ensemble will be good to use because each of the standalone solutions have different strengths and weaknesses, and the compensation for the strengths and weaknesses between the models will generally lead to a better result of them all together in an ensemble. 
+Finally an artificial neural network approach specifically suited to time series classification problem will be approached. 
 
 Suggested:
 •	The XGBoost and LightGBM models could be good supervised learning approaches to try here.

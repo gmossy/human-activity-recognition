@@ -96,9 +96,15 @@ In this section, you will need to discuss the algorithms and techniques you inte
 - _Are the techniques to be used thoroughly discussed and justified?_
 - _Is it made clear how the input data or datasets will be handled by the algorithms and techniques chosen?_
 
-First, a baseline in performance will be done using a robust method such as Logistic Regression. Next, XGBoost and LightGBM models are good supervised learning approaches that will be explored next. 
+
+This stage of the activity recognition chain involves the training of a classification model that is able to discriminate the physical activity performed by a certain subject. Our objective is to eventually obtain a classifier that maximizes accuracy (i.e., the hit rate between the predicted and the actual class in a test set).
+The resulting classifier is intended to be used in a real-time cross-person prediction system that must be able to accurately predict the activity that a new user is performing. 
+
+First, to prototype a fast evaluation system,  Python’s machine learning library, using "scikit-learn" a baseline in performance will be done using a robust method such as Logistic Regression. Next, XGBoost and LightGBM models are good supervised learning approaches that will be explored next. 
 Instead of picking just one of the machine learning solutions we have developed, we will build an ensemble of the models and evaluate if that leads to an improved classification rate.  An ensemble of the Logistic Regression Model, XGBoost, and LightGBM will be built.  An ensemble will be good to use because each of the standalone solutions have different strengths and weaknesses, and the compensation for the strengths and weaknesses between the models will generally lead to a better result of them all together in an ensemble. 
 Finally an artificial neural network approach specifically suited to time series classification problem will be approached. 
+
+The same data are input to different classifiers, and the results are stored for analysis. When selecting the classifiers, I used a wide set that includes classical [49] and state-of-the-art [50] techniques. I tested all of the classifiers with various parameters. The classifiers with lower performances were discarded. The following classifiers were finally selected to be studied in more detail.
 
 Suggested:
 •	The XGBoost and LightGBM models could be good supervised learning approaches to try here.
@@ -135,6 +141,32 @@ In this section, the process for which metrics, algorithms, and techniques that 
 - _Were there any complications with the original metrics or techniques that required changing prior to acquiring a solution?_
 - _Was there any part of the coding process (e.g., writing complicated functions) that should be documented?_
 
+
+For each individual run of all of the experiments conducted, I collected accuracy, precision, recall and F1 scores. The accuracy metric is simply the percentage of correctly-classified instances. Although the dataset used for this work is not perfectly balanced, because we are working with 12 classes, we consider that average accuracy metric to be both a simple and appropriate metric for representing the classifiers’ overall performances. For this reason, and to aid readability, we summarized only the accuracy metric plus variance for the preliminary evaluation. Of course, we also analyzed the confusion matrix, precision, recall, F1. Because this is a multiclass problem, these metrics are obtained by weighted averaging.
+
+Another commonly-used quality metric is the receiver operating characteristic (ROC) metric; however, for this work, we did not analyze the ROC curves, because this is a multiclass problem. First, ROC curves, which generally work well for visualization, would be difficult to visualize for 12 classes, requiring the volume under the ROC surfaces metric (VUS) or Cobweb diagrams. Second, for each class, a pairwise comparison of the performance of that class versus all of the other classes would be required.
+ref: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5298639/
+
+Distance-Based Methods
+These algorithms assume that the data have some type of similarity and relations based on geometric properties and can be grouped according to these patterns.
+The k-nearest neighbors algorithm (k-NN) is one of the simplest and most effective nonparametric machine learning algorithms for    classification and regression [51]. The k-NN classifier obtained better results for online recognition when compared to C4.5 decision tree. [52]. After testing several parameters, we eventually used the k-NN algorithm with its default scikit-learn parameters
+
+Statistical Methods
+These techniques assume that data follow a probabilistic function that needs to be inferred.
+
+Kernel Methods
+These models perform pattern analysis based on a kernel function, which is a similarity function over pairs of data points.
+
+Decision Tree-Based Methods
+These techniques build a model that predicts a target variable by learning interpretable decision rules inferred from the training data [61]. Using a decision tree as a predictive model is widely used as a decision support tool because they are easily interpreted (i.e., they provide a sequence of decisions to obtain the final classification result).
+
+Ensemble Learners
+These models combine the predictions of several base estimators built with a given learning algorithm to improve the results and robustness over a single estimator.
+
+Deep Learning
+These techniques are an extension or a re-branding of neural networks [69]. They are based on the idea of modeling problems with high-level abstractions in data by using multiple processing layers that basically perform multiple non-linear transformations
+
+
 ### Refinement
 In this section, you will need to discuss the process of improvement you made upon the algorithms and techniques you used in your implementation. For example, adjusting parameters for certain models to acquire improved solutions would fall under the refinement category. Your initial and final solutions should be reported, as well as any significant intermediate results as necessary. Questions to ask yourself when writing this section:
 - _Has an initial solution been found and clearly reported?_
@@ -151,6 +183,7 @@ In this section, the final model and any supporting qualities should be evaluate
 - _Has the final model been tested with various inputs to evaluate whether the model generalizes well to unseen data?_
 - _Is the model robust enough for the problem? Do small perturbations (changes) in training data or the input space greatly affect the results?_
 - _Can results found from the model be trusted?_
+
 
 ### Justification
 In this section, your model’s final solution and its results should be compared to the benchmark you established earlier in the project using some type of statistical analysis. You should also justify whether these results and the solution are significant enough to have solved the problem posed in the project. Questions to ask yourself when writing this section:

@@ -28,7 +28,7 @@ In this section, you will want to clearly define the problem that you are trying
 
 Human Activity Recognition or HAR for short, is the problem of predicting what a person is doing based on a time series recording of their movement using sensors. The idea is that once the subject’s activity is recognized and known, it can be saved in a model that can then be used to recognize future those activities with high accuracy when applied, and then provide useful assistance with the result. 
 
-Movements that we will study in this project will be normal indoor activities such as standing, sitting, and stair climbing. Sensors are body mounted and record accelerometer and gyroscope data in three dimensions (x, y, z).  The objective is to classify activities into one of the six activities performed.
+Movements that we will study in this project will be normal indoor activities such as walking, standing, sitting, laying and walking up and downstairs. Additionaly, six postural transitional activities will be included these are moving from standing to sit, or laying down to sit, or laying to standing.  Sensors are body mounted and record accelerometer and gyroscope data in three dimensions (x, y, z).  The objective is to classify activities into one of the twelve activities performed. 
 
 It is a challenging problem because there is no clear analytical way to relate the sensor data to specific actions in a general way. It is technically challenging because of the large volume of sensor data collected (e.g. tens or hundreds of observations per second) and the classical use of hand crafted features and heuristics from this data in developing predictive models.
 Classical approaches to the problem involve hand crafting features from the time series data based on fixed-size windows and training machine learning models, such as ensembles of decision trees or random forest methods.
@@ -38,21 +38,20 @@ In this section, you will need to clearly define the metrics or calculations you
 - _Are the metrics you’ve chosen to measure the performance of your models clearly discussed and defined?_
 - _Have you provided reasonable justification for the metrics chosen based on the problem and solution?_
 
-Most of the time we use classification accuracy to measure the performance of our model, however it is not enough to truly judge our model. There are five other metrics that will be used to meaure performance of the models, the confusion matrix, the Precision-Recall Curve, the Receiver Operating Characteristic, F1 Score and Log Loss. 
-
-Classification Accuracy is what we usually mean, when we use the term accuracy. It is the ratio of number of correct predictions to the total number of activity input samples.
+Most of the time we use classification accuracy to measure the performance of our model, however it is not enough to truly judge our model. There are five other metrics that will be used to meaure performance of the models, the confusion matrix, the Precision-Recall Curve, F1 Score and Log Loss. 
+(I removed the the Receiver Operating Characteristic,)
+The classification Accuracy is what we usually mean, when we use the term accuracy. It is the ratio of number of correct predictions to the total number of activity input samples.
 
 The confusion matrix, which is an output table that summarizes the number of true positives, true negatives, false positives, and false negatives, and describes the complete performance of the model. The confusion matrix is a straightforward evaluation metric if we assume that the results have balanced classes, in the number of true positives to true negatives.
 
 The Precision-Recall evalution metrics can be used if we find that the dataset is imbalanced. 
 Precision is the number of true positives over the number of total positive predictions.  A high precision means that there will be many true positives and a low false positive rate.  Recall is the number of true positives over the number of total actual positives in the dataset.  A high recall means that the model has captured most of the true positives, and has a low false negative rate.  An optimal solution needs to have high precision and high recall, rejecting only those activities that don't match the class, i.e. high precision, and matching the correct activity to the class in the dataset (high recall). 
 
-Receiver Operating Characteristic is one of the most widely used metrics for evaluation, and used for binary classification problems. that plots the true positive rate on the Y axis and the false positive rate on the X axis.  The closer the curve is to the top-left corner of the plot, the better the solutionh,signifying a 0% false positive rate and a 100% true positive rate.  To evaluate the solution, we compute the area under the curve, so that the larger the auROC, the better the model. 
-
 F1 Score is the Harmonic Mean between precision and recall. The range for F1 Score is [0, 1]. It tells you how precise the classifier is (how many instances it classifies correctly), as well as how robust it is (it does not miss a significant number of instances).
 
 The Logarithmic Loss metric can handle class imbalances and works well with for multi-class classification with artificial neural network implementations. The log loss works by penalising the false classifications, in other words minimizing Log Loss will indicate greater accuracy for the classifier.
 
+Receiver Operating Characteristic is one of the most widely used metrics for evaluation, and used for binary classification problems. that plots the true positive rate on the Y axis and the false positive rate on the X axis.  The closer the curve is to the top-left corner of the plot, the better the solutionh,signifying a 0% false positive rate and a 100% true positive rate.  To evaluate the solution, we compute the area under the curve, so that the larger the auROC, the better the model. 
 
 ## II. Analysis
 _(approx. 2-4 pages)_
@@ -77,8 +76,7 @@ Splitting data into fixed windows of 2.56 seconds (128 data points) with 50% ove
 Feature engineering was applied to the window data, and a copy of the data with these engineered features was made available.
 A number of time and frequency features commonly used in the field of human activity recognition were extracted from each window. The result was a 561 element vector of features.
 The dataset was split into train (70%) and test (30%) sets based on data for subjects, e.g. 21 subjects for train and nine for test.
-The data is provided as a single zip file that is about 58 megabytes in size. The direct link for this download is below:
-UCI HAR Dataset.zip
+The data is provided as a single zip file that is about 58 megabytes in size. 
 
 ### Exploratory Visualization
 In this section, you will need to provide some form of visualization that summarizes or extracts a relevant characteristic or feature about the data. The visualization should adequately support the data being used. Discuss why this visualization was chosen and how it is relevant. Questions to ask yourself when writing this section:
@@ -95,7 +93,6 @@ In this section, you will need to discuss the algorithms and techniques you inte
 - _Are the algorithms you will use, including any default variables/parameters in the project clearly defined?_
 - _Are the techniques to be used thoroughly discussed and justified?_
 - _Is it made clear how the input data or datasets will be handled by the algorithms and techniques chosen?_
-
 
 This stage of the activity recognition chain involves the training of a classification model that is able to discriminate the physical activity performed by a certain subject. Our objective is to eventually obtain a classifier that maximizes accuracy (i.e., the hit rate between the predicted and the actual class in a test set).
 The resulting classifier is intended to be used in a real-time cross-person prediction system that must be able to accurately predict the activity that a new user is performing. 

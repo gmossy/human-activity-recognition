@@ -10,7 +10,7 @@ In this section, look to provide a high-level overview of the project in layman�
 - _Has an overview of the project been provided, such as the problem domain, project origin, and related datasets or input data?_
 - _Has enough background information been given so that an uninformed reader would understand the problem domain and following problem statement?_
 
-The goal of activity recognition is to recognize common human activities in real life settings. Human activity recognition or HAR for short is the problem of predicting what a person is doing based on a trace of their movement while doing a specific activity using sensors.  HAR plays an important role in people’s daily life for its competence in learning profound high-level knowledge about human activity from raw sensor inputs. [1]  
+The goal of activity recognition is to recognize common human activities in real life settings. Human activity recognition or HAR for short is the problem of predicting what a person is doing based on a trace of their movement while doing a specific activity using sensors. This is a classification project, since the variable to be predicted is categorical.   HAR plays an important role in people’s daily life for its competence in learning profound high-level knowledge about human activity from raw sensor inputs. [1]  
 
 Human Activity Recognition appealing applications ranging from security-related applications, logistics support, location-based services and exploitation of Ambient Intelligence (AmI) by helping handicapped or elderly people to live more independently, rate health levels, activate household controls, appliances and provide safety. With knowledge from the model, results can be used to perform Ambient Assisted Living.  Better predicting of human behavior means we can proactively deliver specilized programs and targeted interventions to the populations that are most in need. HAR is very multifaceted, useful many fields and may be referred to as goal recognition, behavior recognition, location estimation, etc. 
 
@@ -67,11 +67,25 @@ A standard human activity recognition dataset is the ‘Activity Recognition Usi
 The dataset was made available and can be downloaded for free from the UCI Machine Learning Repository:
 Human Activity Recognition Using Smartphones Data Set, UCI Machine Learning Repository
 
-The data was collected from 30 subjects aged between 19 and 48 years old performing one of six standard activities while wearing a waist-mounted smartphone that recorded the movement data. Video was recorded of each subject performing the activities and the movement data was labeled manually from these videos. The HAR dataset was collected in laboratory conditions but volunteers were asked to perform freely the sequence of activities for a more naturalistic dataset.  The set of experiments in which each person were instructed to follow was a protocol of activities while wearing a waist-mounted Samsung Galaxy S II smartphone. The six selected activities were as follows: 1. Walking, 2. Walking Upstairs, 3. Walking Downstairs, 4. Sitting. 5. Standing, 6. Laying
+The data was collected from 30 subjects aged between 19 and 48 years old performing one of six standard activities while wearing a waist-mounted smartphone that recorded the movement data. Video was recorded of each subject performing the activities and the movement data was labeled manually from these videos. The HAR dataset was collected in laboratory conditions but volunteers were asked to perform freely the sequence of activities for a more naturalistic dataset.  The set of experiments in which each person were instructed to follow was a protocol of activities while wearing a waist-mounted Samsung Galaxy S II smartphone. The target variables has 12 different classes, basic activities plus the postural activities: 1. Walking, 2. Walking Upstairs, 3. Walking Downstairs, 4. Sitting. 5. Standing, 6. Laying
 
 The movement data recorded was the x, y, and z accelerometer data (linear acceleration) and gyroscopic data (angular velocity) from the smart phone, specifically a Samsung Galaxy S II. Observations were recorded at 50 Hz (i.e. 50 data points per second), that was consistent across the dataset. Each subject performed the sequence of activities twice; once with the device on their left-hand-side and once with the device on their right-hand side.
 The raw data is not available. Instead, a pre-processed version of the dataset was made available. The pre-processing steps included:
 Pre-processing accelerometer and gyroscope using noise filters.
+
+The input variables include time and frequency domain signals obtained from the smartphone sensors:
+
+     body_acceleration 
+     gravity_acceleration
+     body_acceleration_jerk
+     body_angular_speed
+     body_angular_acceleration
+     body_acceleration_magnitude
+     gravity_acceleration_magnitude
+     body_acceleration_jerk_magnitude
+     body_angular_speed_magnitude
+     body_angular_acceleration_magnitude
+
 Splitting data into fixed windows of 2.56 seconds (128 data points) with 50% overlap. Splitting of accelerometer data into gravitational (total) and body motion components.
 Feature engineering was applied to the window data, and a copy of the data with these engineered features was made available.
 A number of time and frequency features commonly used in the field of human activity recognition were extracted from each window. The result was a 561 element vector of features.
@@ -228,7 +242,41 @@ In this section, you will need to provide discussion as to how one aspect of the
 
 # References
 
-Patel, A., "Hands-On Unsupervised Learning Using Python" How to Build Applied Machine Learning Solutions from Unlabeled Data, O'Reilly Media Inc., 3rd Release, May 03, 2019.
+[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. A Public Domain Dataset for Human Activity Recognition Using Smartphones. http://archive.ics.uci.edu/ml/datasets/Smartphone-Based+Recognition+of+Human+Activities+and+Postural+Transitions, 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013.
+
+[2] Jorge-Luis Reyes-Ortiz, Luca Oneto, Alessandro Ghio, Albert SamÃ¡, Davide Anguita and Xavier Parra. Human Activity Recognition on Smartphones With Awareness of Basic Activities and Postural Transitions. Artificial Neural Networks and Machine Learning â€“ ICANN 2014. Lecture Notes in Computer Science. Springer. 2014.
+
+
+[2] Jindong Wang, Yiqiang Chen, Shuji Hao, Xiaohui Peng, Lisha Hu, Deep Learning for Sensor-based Activity Recognition: A Survey, https://arxiv.org/abs/1707.03502, arXiv:1707.03502v2 [cs.CV], 14 Dec 2017
+
+[3] Mohammad Abu Alsheikh and Ahmed Selim and Dusit Niyato Linda Doyle and Shaowei Lin and Hwee-Pink Tan, Deep Activity Recognition Models with Triaxial Accelerometers, https://arxiv.org/abs/1511.04664, arXiv:1511.04664v2 [cs.LG], 25 Oct 2016 https://arxiv.org/pdf/1511.04664.pdf
+
+[4] Kwapisz J., Weiss G., Samuel A. Moore, S., Activity Recognition using Cell Phone Accelerometers, http://www.cis.fordham.edu/wisdm/includes/files/sensorKDD-2010.pdf, 2010
+
+[5] Calatroni, Alberto; Roggen, Daniel; Tröster, Gerhard, A methodology to use unknown new sensors for activity recognition by leveraging sporadic interactions with primitive sensors and behavioral assumptions, https://doi.org/10.3929/ethz-a-006286309, 2010
+
+Books
+[6] Patel, A., "Hands-On Unsupervised Learning Using Python" How to Build Applied Machine Learning Solutions from Unlabeled Data, O'Reilly Media Inc., 3rd Release, May 03, 2019.
+
+Web Resources
+
+[ ] "1.1. Generalized Linear Models", 1.1.11. Logistic regression - scikit-learn v0.21.3 Documentation. https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression, N.p., n.d., Web., 11 Nov 2019
+
+[ ] "1.11. Ensemble methods", 1.11.2.1. Random Forests - scikit-learn v0.21.3 Documentation. https://scikit-learn.org/stable/modules/ensemble.html, N.p., n.d., Web., 11 Nov 2019
+
+[ ] "1.11. Ensemble methods", 1.11.3. AdaBoost - scikit-learn v0.21.3 Documentation. https://scikit-learn.org/stable/modules/ensemble.html, N.p., n.d., Web., 11 Nov 2019
+
+[ ] "3.3. Model evaluation: quantifying the quality of predictions" - scikit-learn v0.21.3 Documentation. https://scikit-learn.org/stable/modules/model_evaluation.html, N.p., n.d., Web., 11 Nov 2019
+
+[ ] "3.3. Model evaluation: quantifying the quality of predictions", 3.3.2.5. Confusion matrix - scikit-learn v0.21.3 Documentation. https://scikit-learn.org/stable/auto_examples/model_selection/plot_confusion_matrix.html#sphx-glr-auto-examples-model-selection-plot-confusion-matrix-py, N.p., n.d., Web., 11 Nov 2019
+
+[ ] "1.17. Neural network models (supervised) - scikit-learn v0.21.3 Documentation. https://scikit-learn.org/stable/modules/neural_networks_supervised.html, N.p., n.d., Web., 11 Nov 2019
+
+https://www.kaggle.com/uciml/human-activity-recognition-with-smartphones, N.p., n.d., Web., 11 Nov 2019
+
+https://archive.ics.uci.edu/ml/datasets/human+activity+recognition+using+smartphones , N.p., n.d., Web., 11 Nov 2019
+
+https://www.neuraldesigner.com/learning/examples/activity-recognition https://www.youtube.com/watch?v=XOEN9W05_4A, N.p., n.d., Web., 11 Nov 2019
 
 
 

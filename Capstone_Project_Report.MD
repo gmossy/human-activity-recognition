@@ -198,6 +198,12 @@ In this section, the final model and any supporting qualities should be evaluate
 - _Can results found from the model be trusted?_
 
 
+Due to class imbalance presented in the data, a robust methodology is required to examine accuracy together with a confusion matrix to understand where the errors were coming from. 
+ 
+ 
+Both the fine tuned XXx model and the ANN applied over the entire dataset outperformed the benchmarking model. There is little surprise given the models were performed over larger datasets with fine tuned hyper parameters to optimise accuracy scores.  In addition, since bo XXx and ANN models achieved over 9x% accuracy on the testing datasets, it is considered as appropriate solution to address the HAR problem adequately.
+
+
 ### 4.2 Justification
 In this section, your model’s final solution and its results should be compared to the benchmark you established earlier in the project using some type of statistical analysis. You should also justify whether these results and the solution are significant enough to have solved the problem posed in the project. Questions to ask yourself when writing this section:
 - _Are the final results found stronger than the benchmark result reported earlier?_
@@ -214,6 +220,9 @@ In this section, you will need to provide some form of visualization that emphas
 - _Is the visualization thoroughly analyzed and discussed?_
 - _If a plot is provided, are the axes, title, and datum clearly defined?_
 
+
+
+
 ### 5.2 Reflection
 In this section, you will summarize the entire end-to-end problem solution and discuss one or two particular aspects of the project you found interesting or difficult. You are expected to reflect on the project as a whole to show that you have a firm understanding of the entire process employed in your work. Questions to ask yourself when writing this section:
 - _Have you thoroughly summarized the entire process you used for this project?_
@@ -221,11 +230,20 @@ In this section, you will summarize the entire end-to-end problem solution and d
 - _Were there any difficult aspects of the project?_
 - _Does the final model and solution fit your expectations for the problem, and should it be used in a general setting to solve these types of problems?_
 
+Much work was put in by the researchers to preprocess the dataset and by providing labeled data, enabling me to focus purely on applying machine learning techniques and focusing on improving the model performance.  However, such well treated dataset is rare in practice. 
+In designing a suitable neural network structure, combinations of hyperparameters are endless, and different types of neural networks can be applied, and can be evaluated. 
+
 ### 5.3 Improvement
 In this section, you will need to provide discussion as to how one aspect of the implementation you designed could be improved. As an example, consider ways your implementation can be made more general, and what would need to be modified. You do not need to make this improvement, but the potential solutions resulting from these changes are considered and compared/contrasted to your current solution. Questions to ask yourself when writing this section:
 - _Are there further improvements that could be made on the algorithms or techniques you used in this project?_
 - _Were there algorithms or techniques you researched that you did not know how to implement, but would consider using if you knew how?_
 - _If you used your final solution as the new benchmark, do you think an even better solution exists?_
+
+
+One method for improvement would be to further fine-tune the gridsearch function to further improve the model performance. 
+Use of the raw dataset which can be found at [x] could also be explored to see whether the preprocessing procedures have significant impact on model performance.
+
+In addition, given the errors were predominantly present in transitioning activities, partitioning out the static and non-static (postural transitions) activities may be helpful to eliminating the class imbalances during classification training. If no significant improvement were found after the separating out the static and non-static activities, it might mean further sensor devices or data points maybe required to delineate the different transitioning activities from each other.
 
 -----------
 

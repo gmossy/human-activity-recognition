@@ -69,11 +69,11 @@ A standard human activity recognition dataset is the ‘Activity Recognition Usi
 The dataset was made available and can be downloaded for free from the UCI Machine Learning Repository:
 Human Activity Recognition Using Smartphones Data Set, UCI Machine Learning Repository
 
-The data was collected from 30 subjects aged between 19 and 48 years old performing one of six standard activities while wearing a waist-mounted smartphone that recorded the movement data. Video was recorded of each subject performing the activities and the movement data was labeled manually from these videos. The HAR dataset was collected in laboratory conditions but volunteers were asked to perform freely the sequence of activities for a more naturalistic dataset.  The set of experiments in which each person were instructed to follow was a protocol of activities while wearing a waist-mounted Samsung Galaxy S II smartphone. The target variables has 12 different classes, basic activities plus the postural activities: 1. Walking, 2. Walking Upstairs, 3. Walking Downstairs, 4. Sitting. 5. Standing, 6. Laying, 7. 'STAND_TO_SIT', 8. 'SIT_TO_STAND', 9. 'SIT_TO_LIE', 10.'LIE_TO_SIT', 11. 'STAND_TO_LIE', 12. 'LIE_TO_STAND'.
+The data was collected from 30 subjects aged between 19 and 48 years old performing one of six standard activities while wearing a waist-mounted smartphone that recorded the movement data. Video was recorded of each subject performing the activities and the movement data was labeled manually from these videos. The HAR dataset was collected in laboratory conditions but volunteers were asked to perform freely the sequence of activities for a more naturalistic dataset.  The set of experiments in which each person were instructed to follow was a protocol of activities while wearing a waist-mounted Samsung Galaxy S II smartphone. After a series of preprocessing, the final dataset has 561-feature vector per example derived from 17 action patterns and 17 functions over 12 activities labels. So the target variables have 12 different classes, the basic activities plus the postural activities as follows: 1. Walking, 2. Walking Upstairs, 3. Walking Downstairs, 4. Sitting. 5. Standing, 6. Laying, 7. 'stand-to-sit, 8. sit-to-stand, 9. sit-to-lie, 10. lie-to-sit,11. stand-to-lie and 12. lie-to-stand.
 
 The movement data recorded was the x, y, and z accelerometer data (linear acceleration) and gyroscopic data (angular velocity) from the smart phone, specifically a Samsung Galaxy S II. Observations were recorded at 50 Hz (i.e. 50 data points per second), that was consistent across the dataset. Each subject performed the sequence of activities twice; once with the device on their left-hand-side and once with the device on their right-hand side.
-The raw data is not available. Instead, a pre-processed version of the dataset was made available. The pre-processing steps included:
-Pre-processing accelerometer and gyroscope using noise filters.
+
+The raw data is not available, but instead a pre-processed version of the dataset was made available. The dataset used in this paper had already been pre-processed. In particular, the SBHAR data generated around 5-hours of experimental data [3], and was also pre-processed with noise filters Instead, The pre-processing steps included: Pre-processing accelerometer and gyroscope using noise filters and other data transformations were also applied including the calculation of Jerk signals from time, body linear acceleration and angular velocity information; magnitude using Euclidean norm and, the frequency domain signals using Fast Fourier Transform (FFT).
 
 The input variables include time and frequency domain signals obtained from the smartphone sensors:
 
@@ -88,9 +88,7 @@ The input variables include time and frequency domain signals obtained from the 
      body_angular_speed_magnitude
      body_angular_acceleration_magnitude
 
-Splitting data into fixed windows of 2.56 seconds (128 data points) with 50% overlap. Splitting of accelerometer data into gravitational (total) and body motion components.
-Feature engineering was applied to the window data, and a copy of the data with these engineered features was made available.
-A number of time and frequency features commonly used in the field of human activity recognition were extracted from each window. The result was a 561 element vector of features.
+Splitting data into fixed-width sliding windows of 2.56 seconds (128 readings/window) with 50% overlap. Splitting of accelerometer data into gravitational (total) and body motion components.  Feature engineering was applied to the window data, and a copy of the data with these engineered features was made available.  A number of time and frequency features commonly used in the field of human activity recognition were extracted from each window. The result was a 561 element vector of features.
 The dataset was split into train (70%) and test (30%) sets based on data for subjects, e.g. 21 subjects for train and nine for test.
 The data is provided as a single zip file that is about 58 megabytes in size. 
 
@@ -134,8 +132,14 @@ In this section, you will need to provide a clearly defined benchmark result or 
 - _Has some result or value been provided that acts as a benchmark for measuring performance?_
 - _Is it clear how this result or value was obtained (whether by data or by hypothesis)?_
 
-The benchmark model that will be used will be a logistic regression model for a classification to develop a baseline activity recognition model.
+The benchmark model that will be used for measuring performance will be a logistic regression model for a classification to develop a baseline activity recognition model.
+The reasoning behind using this benchmark is .....
+
 The benchmark model will then be compared to the different standalone models, and then to the ensemble, then the stacking, and then the ANN models predictions.  
+
+https://medium.com/@xiaoshansun/human-activity-recognition-using-smartphones-sensor-data-fd1af142cc81
+Given the accuracy on testing data is much lower than that on the training data, the algorithms appeared to suffer from overfitting. One way to deal with overfitting is to increase the size of dataset used for training. Applying deep neural network could also help reduce overfitting given the dataset used would be augmented to full. Alternatively some form of regularisation to penalise overfitting may also be helpful to alleviate the problem.
+
 
 ## 3 Methodology
 _(approx. 3-5 pages)_

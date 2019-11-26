@@ -1,7 +1,7 @@
 # Machine Learning Engineer Nanodegree
 ## A Capstone Project for Machine Learning Nanodegree at Udacity
 by Glenn Mossy
-November 24, 2019
+November 26, 2019
 
 ## 1 Definition
 
@@ -16,7 +16,7 @@ Human Activity Recognition appealing applications ranging from security-related 
 
 Human Activity Recognition aims to identify the actions carried out by a person provided by a set of observations from the person's movements and surrounding environment, and then model a wide range of human activities. Recognition can be accomplished by exploiting the information retrieved from various sources such as body-worn sensors.  It is believed that by empowering computer monitoring to monitor the behavior of agents then these computers would become and suited to act on our behalf. 
  
-This paper explores a readily available dataset from the UCI [1] that is based on the work "Human Activity Recognition on Smartphones With Awareness of Basic Activities and Postural Transitions", by Jorge-Luis Reyes-Ortiz, Luca Oneto, Alessandro Ghio, Albert SamÃ¡, Davide Anguita and Xavier Parra. This work expands on the earlier work done [2] "A Public Domain Dataset for Human Activity Recognition Using Smartphones." by adding a study of Postual Transitions.
+This project explores a readily available dataset from the UCI [1] that is based on the work "Human Activity Recognition on Smartphones With Awareness of Basic Activities and Postural Transitions", by Jorge-Luis Reyes-Ortiz, Luca Oneto, Alessandro Ghio, Albert SamÃ¡, Davide Anguita and Xavier Parra. This work expands on the earlier work done [2] "A Public Domain Dataset for Human Activity Recognition Using Smartphones." by adding a study of Postual Transitions.  In this project I build several machine learning models to train and predict the human activities such as walking, walking upstairs, walking downstairs, sitting, standing, or laying along with postural transitions from one of standing, sitting or laying postions to the their opposites. Accuracy scoring and analysis will be done on the performance of each of the models. 
 
 The project in which this paper is based [1] uses sensors that are body mounted accelerometer and gyroscope but many additional sensors, such as microphones, motion video capture, human physiological signals or vital signs could be later added to this project in order to capture data to provide features to the model that would improve the accuracy, provide more data for the models, and increase the number of activities that can be understood, with the ultimate goal of providing a real-time prediction of each and every activity that the person is doing.  
 
@@ -30,7 +30,7 @@ In this section, you will want to clearly define the problem that you are trying
 
 Human Activity Recognition or HAR for short, is the problem of predicting what a person is doing based on a time series recording of their movement using sensors. The idea is that once the subject’s activity is recognized and known, it can be saved in a model that can then be used to recognize future those activities with high accuracy when applied, and then provide useful assistance with the result. 
 
-Movements that we will study in this project will be normal indoor activities such as walking, standing, sitting, laying and walking up and downstairs. Additionaly, six postural transitional activities will be included these are moving from standing to sit, or laying down to sit, or laying to standing.  Sensors are body mounted and record accelerometer and gyroscope data in three dimensions (x, y, z).  The objective is to classify activities into one of the twelve activities performed. 
+Movements that we will study in this project will be normal indoor activities such as walking, standing, sitting, laying and walking up and downstairs. Additionaly, six postural transitional activities will be included these are moving from standing to sit, or laying down to sit, or laying to standing.  By using sensors in a smartphone, 3-axial linear acceleration from an accelerometer and 3-axis angular velocity from gyroscope data in three dimensions (x, y, z) is recorded.  The objective is to classify activities into one of the twelve activities performed and then score and analyse the results.
 
 It is a challenging problem because there is no clear analytical way to relate the sensor data to specific actions in a general way. It is technically challenging because of the large volume of sensor data collected (e.g. tens or hundreds of observations per second) and the classical use of hand crafted features and heuristics from this data in developing predictive models.
 Classical approaches to the problem involve hand crafting features from the time series data based on fixed-size windows and training machine learning models, such as ensembles of decision trees or random forest methods, or should a more sophisticated approach be used such as a artificial neural network be used.

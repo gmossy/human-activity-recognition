@@ -1,6 +1,6 @@
 Udacity Machine Learning Capstone Project
-# human-activity-recognition
-Udacity Machine Learning Capstone - by Glenn Mossy - A Machine Learning Based Human Activity Recognizer
+# human-activity-recognition 
+Udacity Machine Learning Capstone - by Glenn Mossy - A study of Machine Learning Based Human Activity Recognizers
 11/26/2019
 
 In this README file, you will find a link were to download the data, what the data files are named, and instructions on how to use the  data, how to run the project, and Acknowledgements.
@@ -8,7 +8,7 @@ In this README file, you will find a link were to download the data, what the da
 ## Motivation
 The purpose of this project was to analyze data generated from smartphone sensors and to build and evaluate different models that can accurately classify 6 different activity types: walking, walking upstairs, walking downstairs, sitting, standing, and laying, plus 6 postural Transitions, Stand to Sit, Sit to Stand, Sit to Lie, Lie to Sit, Stand to Lie, Lie to Stand. 
 
-## Installation
+## Obtaining the dataset
 This project was written in the Anaconda environment and Python 3.7
 The data is provided as a single zip file that is about 75.9 megabytes in size. The direct link for this download is as follows:
 HAPT Data Set, the data set file to download will be "HAPT Data Set.zip".
@@ -18,6 +18,7 @@ Download the dataset and unzip all files into a new directory in your current wo
 
 I"m using the updated 2nd version which includes postural transitions that were not part of the previous version of the dataset. Moreover, the activity labels were updated in order to include postural transitions that were not part of the previous version of the dataset.  Also the original raw inertial signals from the smartphone sensors are included in a RawData folder.  The raw data is available in order to allow you to make additional online tests with the data.  
 
+## Dataset Description
 The dataset is then divided in two parts and they can be used separately.  
 
 1. Inertial sensor data 
@@ -29,7 +30,7 @@ The dataset is then divided in two parts and they can be used separately.
 - Its associated activity label. 
 - An identifier of the subject who carried out the experiment.
 
-Files
+## Dataset Files and File details
 This dataset repository and root folder "HAPT Data Set" contains the following:
 - 'README.txt'
 
@@ -37,7 +38,7 @@ This dataset repository and root folder "HAPT Data Set" contains the following:
 - 'features.txt': List of all features.
 - 'activity_labels.txt': Links the activity ID with their activity name for each of the 12 activities.
 
-- 'Train/X_train.txt': Training set.
+- 'Train/X_train.txt': Training set.  Includes the activity ID, as column "Y"
 - 'Train/y_train.txt': Training labels.
 - 'Train/subject_id_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
 
@@ -57,11 +58,11 @@ This dataset repository and root folder "HAPT Data Set" contains the following:
    Column 5: Label end point (in number of signal log samples)
 
 An example of how to load the data is like this:
-# The Training set
+## Using the dataset with Pandas
 X_train = pd.read_csv('./data/HAPT Data Set/Train/X_train.txt', sep='\s+', header=None)
 y_train = pd.read_csv('./data/HAPT Data Set/Train/y_train.txt', sep='\s+', header=None, names='Y')
 
-Acknowledgements  
+## Acknowledgements  
 Jorge L. Reyes-Ortiz(1,2), Davide Anguita(1), Luca Oneto(1) and Xavier Parra(2) 
 1 - Smartlab, DIBRIS - Università  degli Studi di Genova, Genoa (16145), Italy. 
 2 - CETpD - Universitat Politècnica de Catalunya. Vilanova i la Geltrú (08800), Spain   

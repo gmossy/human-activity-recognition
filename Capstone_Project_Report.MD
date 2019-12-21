@@ -99,9 +99,10 @@ In this section, you will need to provide some form of visualization that summar
 - _Is the visualization thoroughly analyzed and discussed?_
 - _If a plot is provided, are the axes, title, and datum clearly defined?_
 
+- No of Datapoints per Activity  
 
+![No of Datapoints per Activity](https://github.com/gmossy/human-activity-recognition/blob/master/figures/human_activity_dectector_16_1.png "Number of Datapoints per Activity")  
 
-![No of Datapoints per Activity](https://github.com/gmossy/human-activity-recognition/tree/master/figures/human_activity_dectector_16_1.png "No of Datapoints per Activity")  
 
 Visualization of Feature Distribution of the activities by type.
 Visual exploration of the data in 3 dimensions with principal component analysis will be done.

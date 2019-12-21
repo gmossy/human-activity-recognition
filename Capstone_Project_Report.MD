@@ -1,7 +1,7 @@
 # Machine Learning Engineer Nanodegree
 ## A Capstone Project for Machine Learning Nanodegree at Udacity
 by Glenn Mossy
-November 26, 2019
+December 22, 2019
 
 ## 1 Definition
 
@@ -98,6 +98,10 @@ In this section, you will need to provide some form of visualization that summar
 - _Have you visualized a relevant characteristic or feature about the dataset or input data?_
 - _Is the visualization thoroughly analyzed and discussed?_
 - _If a plot is provided, are the axes, title, and datum clearly defined?_
+
+
+
+![No of Datapoints per Activity](https://github.com/gmossy/human-activity-recognition/master/Images/human_activity_dectector_16_1.png "No of Datapoints per Activity")  
 
 Visualization of Feature Distribution of the activities by type.
 Visual exploration of the data in 3 dimensions with principal component analysis will be done.

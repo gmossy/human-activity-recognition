@@ -20,7 +20,7 @@ My interest in this field stems from participation in AT&T Software Symposium Ha
 
 ### 1.2 Problem Statement
 In this section, you will want to clearly define the problem that you are trying to solve, including the strategy (outline of tasks) you will use to achieve the desired solution. You should also thoroughly discuss what the intended solution will be for this problem. Questions to ask yourself when writing this section:
-- _Is the problem statement clearly defined? Will the reader understand what you are expecting to solve?_
+- _Is the problem statement clearly defined? Will the reader understand wcve?_
 - _Have you thoroughly discussed how you will attempt to solve the problem?_
 - _Is an anticipated solution clearly defined? Will the reader understand what results you are looking for?_
 
@@ -28,9 +28,11 @@ Human Activity Recognition or HAR for short, is the problem of predicting what a
 
 Movements that we will study in this project will be six normal indoor activities such as walking, standing, sitting, laying and walking up and downstairs, also six postural transitional activities will be included these are moving from standing to sit, or laying down to sit, or laying to standing.  By using sensors in a smartphone, 3-axial linear acceleration from an accelerometer and 3-axis angular velocity from gyroscope data in three dimensions (x, y, z) is recorded.  
 
-It is a challenging problem because there is no clear analytical way to relate the sensor data to specific actions in a general way. It is technically challenging because of the large volume of sensor data collected (e.g. tens or hundreds of observations per second) and the classical use of hand crafted features and heuristics from this data in developing predictive models. Also, our data will be an unbalanced data set, with the normal activties will have more data points than the postural activities. 
+It is a challenging problem because there is no clear analytical way to relate the sensor data to specific actions in a general way. It is technically challenging because of the large volume of sensor data collected (e.g. tens or hundreds of observations per second) and the classical use of hand crafted features and heuristics from this data in developing predictive models.  
 
-Classical approaches to the problem involve training machine learning models, such as ensembles of logistic regression or random forest methods, while in this project, the objective is build machine learning models to classify activities into one of the twelve activities performed and then score and analyze the results, and special models to evaluate if is there is improvement, a stacking model and an artificial neural network model. 
+In this project, we will examine data that will be an unbalanced data set, with the normal activities will have more data points than the postural activities. Using confusion matrixes, and scoring that calculates precision, recall, f1, and accuracy scores, and r2, and the Matthews correlation coefficient for each model, evaluate and discuss the accuracy of how each of the models perform. It will also be noted how long it takes to train the models, which can provide insight on models that can be used in near real-time to learn new activites.   
+
+Classical approaches to the problem involve training machine learning models, such as ensembles of logistic regression or random forest methods, while in this project, the objective is build machine learning models to classify activities into one of the twelve activities performed and then score and analyze the results, and special models to evaluate if is there is improvement, using a stacking model and a basic artificial neural network model to see how well they do.  
 
 ### 1.3 Metrics
 In this section, you will need to clearly define the metrics or calculations you will use to measure performance of a model or result in your project. These calculations and metrics should be justified based on the characteristics of the problem and problem domain. Questions to ask yourself when writing this section:

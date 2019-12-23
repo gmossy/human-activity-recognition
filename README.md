@@ -1,7 +1,7 @@
 Udacity Machine Learning Capstone Project
 # human-activity-recognition 
 Udacity Machine Learning Capstone - by Glenn Mossy - A study of Machine Learning Based Human Activity Recognizers
-11/26/2019
+12/22/2019
 
 In this README file, you will find a link were to download the data, what the data files are named, and instructions on how to use the  data, how to run the project, and Acknowledgements.
 

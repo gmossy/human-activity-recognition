@@ -5,6 +5,8 @@ Udacity Machine Learning Capstone - by Glenn Mossy - A study of Machine Learning
 
 In this README file, you will find a link were to download the data, what the data files are named, and instructions on how to use the  data, how to run the project, and Acknowledgements.
 
+You will find the complete report in this link: ![Capstone Report]https://github.com/gmossy/human-activity-recognition/blob/master/Capstone_Project_Report.MD  and the ![Juypiter notebook]https://github.com/gmossy/human-activity-recognition/blob/master/human_activity_recognizer.ipynb
+
 ## Motivation
 The purpose of this project was to analyze data generated from smartphone sensors and to build and evaluate different models that can accurately classify 6 different activity types: walking, walking upstairs, walking downstairs, sitting, standing, and laying, plus 6 postural Transitions, Stand to Sit, Sit to Stand, Sit to Lie, Lie to Sit, Stand to Lie, Lie to Stand. 
 

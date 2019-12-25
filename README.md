@@ -71,8 +71,22 @@ This dataset repository and root folder "HAPT Data Set" contains the following:
 
 An example of how to load the data is like this:
 ## Using the dataset with Pandas
--  X_train = pd.read_csv('./data/HAPT Data Set/Train/X_train.txt', sep='\s+', header=None)
--  y_train = pd.read_csv('./data/HAPT Data Set/Train/y_train.txt', sep='\s+', header=None, names='Y')
+# The Training set
+- X_train = pd.read_csv('./data/HAPT Data Set/Train/X_train.txt', sep='\s+', header=None)
+# The Training labels
+- y_train = pd.read_csv('./data/HAPT Data Set/Train/y_train.txt', sep='\s+', header=None, names='Y')
+# The Test set.
+- X_test = pd.read_csv('./data/HAPT Data Set/Test/X_test.txt', sep='\s+', header=None)
+# The Test set labels
+- y_test = pd.read_csv('./data/HAPT Data Set/Test/y_test.txt', sep='\s+', header=None, names='Y')
+# 'activity_labels.txt': Links the class labels with their activity name.
+- activity_labels2 = pd.read_csv('./data/HAPT Data Set/activity_labels.txt', sep='\s+', names=('ID', 'Activity'), header=None)
+#  Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+- subject_train = pd.read_csv('./data/HAPT Data Set/Train/subject_id_train.txt', sep='\s+', header=None)
+# Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+- subject_test = pd.read_csv('./data/HAPT Data Set/Test/subject_id_test.txt', sep='\s+', header=None)
+# 'features.txt': List of all features
+- features2 = pd.read_csv('./data/HAPT Data Set/features.txt', header=None)
 
 ## Acknowledgements  
 Jorge L. Reyes-Ortiz(1,2), Davide Anguita(1), Luca Oneto(1) and Xavier Parra(2) 

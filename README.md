@@ -10,6 +10,7 @@ You will find the complete report in this link: ![Capstone Report](https://githu
 ## Motivation
 The purpose of this project was to analyze data generated from smartphone sensors and to build and evaluate different models that can accurately classify 6 different activity types: walking, walking upstairs, walking downstairs, sitting, standing, and laying, plus 6 postural Transitions, Stand to Sit, Sit to Stand, Sit to Lie, Lie to Sit, Stand to Lie, Lie to Stand. 
 
+
 ## Obtaining the dataset
 This project was written in the Anaconda environment and Python 3.7
 The data is provided as a single zip file that is about 75.9 megabytes in size. The direct link for this download is as follows:
@@ -47,6 +48,15 @@ This dataset repository and root folder "HAPT Data Set" contains the following:
 - 'Test/X_test.txt': Test set.
 - 'Test/y_test.txt': Test labels.
 - 'Test/subject_id_test.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+Informational Summary of the components of the Dataset 
+X_train	The shape of the training set dataframe is (7767, 561)   
+y_train	The shape of the training set labels dataframe is (7767, 1)  
+X_test	The shape of the testing set dataframe is (3162, 561) 
+y_test	The shape of the test set labels dataframe is (3162, 1)
+Activity_labels	Links the class labels with their activity name.  .
+subject_train	Each row identifies the subject who performed the activity for each window sample.
+subject_test	Each row identifies the subject who performed the activity for each window sample.
+features	List of all featuress.
 
 - 'RawData/acc_expXX_userYY.txt': The raw triaxial acceleration signal for the experiment number XX and associated to the user number YY. Every row is one acceleration sample (three axis) captured at a frequency of 50Hz. 
 

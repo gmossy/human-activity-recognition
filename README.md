@@ -1,7 +1,7 @@
 Udacity Machine Learning Capstone Project
-# human-activity-recognition 
+# Human-Activity-Recognition (HAR)
 Udacity Machine Learning Capstone - by Glenn Mossy - A study of Machine Learning Based Human Activity Recognizers
-12/22/2019
+12/25/2019
 
 In this README file, you will find a link were to download the data, what the data files are named, and instructions on how to use the  data, how to run the project, and Acknowledgements.
 
@@ -71,21 +71,21 @@ This dataset repository and root folder "HAPT Data Set" contains the following:
 
 An example of how to load the data is like this:
 ## Using the dataset with Pandas
-# The Training set
+#### The Training set
 - X_train = pd.read_csv('./data/HAPT Data Set/Train/X_train.txt', sep='\s+', header=None)
-# The Training labels
+#### The Training labels
 - y_train = pd.read_csv('./data/HAPT Data Set/Train/y_train.txt', sep='\s+', header=None, names='Y')
-# The Test set.
+#### The Test set.
 - X_test = pd.read_csv('./data/HAPT Data Set/Test/X_test.txt', sep='\s+', header=None)
-# The Test set labels
+#### The Test set labels
 - y_test = pd.read_csv('./data/HAPT Data Set/Test/y_test.txt', sep='\s+', header=None, names='Y')
-# 'activity_labels.txt': Links the class labels with their activity name.
+#### 'activity_labels.txt': Links the class labels with their activity name.
 - activity_labels2 = pd.read_csv('./data/HAPT Data Set/activity_labels.txt', sep='\s+', names=('ID', 'Activity'), header=None)
-#  Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+####  Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
 - subject_train = pd.read_csv('./data/HAPT Data Set/Train/subject_id_train.txt', sep='\s+', header=None)
-# Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+#### Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
 - subject_test = pd.read_csv('./data/HAPT Data Set/Test/subject_id_test.txt', sep='\s+', header=None)
-# 'features.txt': List of all features
+#### 'features.txt': List of all features
 - features2 = pd.read_csv('./data/HAPT Data Set/features.txt', header=None)
 
 ## Acknowledgements  

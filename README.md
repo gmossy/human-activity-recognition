@@ -48,15 +48,15 @@ This dataset repository and root folder "HAPT Data Set" contains the following:
 - 'Test/X_test.txt': Test set.
 - 'Test/y_test.txt': Test labels.
 - 'Test/subject_id_test.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
-Informational Summary of the components of the Dataset 
-X_train	The shape of the training set dataframe is (7767, 561)   
-y_train	The shape of the training set labels dataframe is (7767, 1)  
-X_test	The shape of the testing set dataframe is (3162, 561) 
-y_test	The shape of the test set labels dataframe is (3162, 1)
-Activity_labels	Links the class labels with their activity name.  .
-subject_train	Each row identifies the subject who performed the activity for each window sample.
-subject_test	Each row identifies the subject who performed the activity for each window sample.
-features	List of all featuress.
+## Informational Summary of the components of the Dataset 
+-  X_train	The shape of the training set dataframe is (7767, 561)   
+-  y_train	The shape of the training set labels dataframe is (7767, 1)  
+-  X_test	The shape of the testing set dataframe is (3162, 561) 
+-  y_test	The shape of the test set labels dataframe is (3162, 1)
+-  Activity_labels	Links the class labels with their activity name.  .
+-  subject_train	Each row identifies the subject who performed the activity for each window sample.
+-  subject_test	Each row identifies the subject who performed the activity for each window sample.
+-  features	List of all featuress.
 
 - 'RawData/acc_expXX_userYY.txt': The raw triaxial acceleration signal for the experiment number XX and associated to the user number YY. Every row is one acceleration sample (three axis) captured at a frequency of 50Hz. 
 
